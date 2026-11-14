@@ -1,0 +1,11 @@
+# Generated files and verbatim third-party license texts.
+**/dist/
+**/.test-build/
+**/node_modules/
+**/src/*.generated.ts
+**/package-lock.json
+
+**/ui/*.generated.js
+**/release/
+**/artifacts/
+**/.venv/

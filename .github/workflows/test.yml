@@ -1,0 +1,44 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: live-delivery
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: live-delivery/package-lock.json
+      - run: npm ci
+      - run: npm run verify
+      - run: npm run format:check
+      - run: npm install --global @openai/codex@0.166.0
+      - run: node test/setup-native.mjs
+      - run: node test/provider-env-native.mjs
+      - run: npm run test:codex
+      - run: QWEN_LD_TEST_FEEDBACK=1 node test/workbench-native.mjs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r test/requirements.txt
+      - run: python -m playwright install --with-deps chromium
+      - run: python test/simple-browser.py artifacts/workbench

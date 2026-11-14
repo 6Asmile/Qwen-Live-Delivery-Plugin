@@ -1,0 +1,42 @@
+name: Bug report / 问题报告
+description: Report an installation, delivery, or workbench problem.
+title: '[Bug] '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For suspected vulnerabilities, follow SECURITY.md and use a private report.
+        安全漏洞请按 SECURITY.md 私密报告。请勿附带 API key、工作台访问链接或完整运行日志。
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened? / 遇到了什么问题？
+      description: Describe what you expected and what actually happened.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce / 复现步骤
+      description: Include the smallest request and action sequence that reproduces the problem.
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions / 版本
+      description: Plugin version or commit, Codex version, and Node.js version.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment / 运行环境
+      description: OS, architecture, and whether this is a local desktop or a remote server.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context / 补充信息
+      description: Add relevant errors or screenshots after removing private information.

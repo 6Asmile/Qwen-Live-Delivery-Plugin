@@ -1,0 +1,17 @@
+{
+  "name": "live-delivery-local",
+  "plugins": [
+    {
+      "name": "ld",
+      "source": {
+        "source": "local",
+        "path": "./live-delivery"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

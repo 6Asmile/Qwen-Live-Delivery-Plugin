@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "live-delivery": {
+      "command": "node",
+      "args": ["dist/server.mjs"],
+      "env_vars": [
+        "CODEX_HOME",
+        "CODEX_BIN",
+        "TMPDIR",
+        "TMP",
+        "TEMP",
+        "QWEN_LD_WORKSPACE",
+        "QWEN_LD_PORT",
+        "QWEN_LD_BASE_PATH",
+        "QWEN_LD_TIME_BUDGET",
+        "QWEN_LD_MODEL",
+        "QWEN_LD_SESSION_KEY",
+        "QWEN_LD_INSTANCE_ID",
+        "QWEN_LD_BIND_HOST",
+        "QWEN_LD_OPEN_BROWSER",
+        "DISPLAY",
+        "WAYLAND_DISPLAY",
+        "XDG_RUNTIME_DIR",
+        "DBUS_SESSION_BUS_ADDRESS",
+        "SSH_CONNECTION",
+        "SSH_TTY",
+        "CI",
+        "QWEN_LD_EMBEDDED_TASK",
+        "QWEN_LD_WORKBENCH_STATE",
+        "QWEN_LD_WORKSPACE_ROOT",
+        "QWEN_LD_TASK_SANDBOX",
+        "OPENAI_API_KEY",
+        "CODEX_API_KEY",
+        "QWEN_LD_DASHBOARD_FILE"
+      ],
+      "cwd": ".",
+      "tool_timeout_sec": 86400
+    }
+  }
+}

@@ -35,10 +35,8 @@ export const runtimeFiles = new Set([
   'docs/assets/lifecycle-en.png',
   'docs/assets/header.png',
   'docs/assets/header-en.png',
-  'docs/assets/demo.mp4',
-  'docs/assets/demo-poster.jpg',
-  'docs/assets/demo-en.mp4',
-  'docs/assets/demo-poster-en.jpg',
+  'docs/assets/orbit-live-delivery-zh.gif',
+  'docs/assets/orbit-live-delivery-en.gif',
   'docs/development.md',
   'docs/development.zh-CN.md',
 ]);

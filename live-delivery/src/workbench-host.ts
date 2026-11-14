@@ -359,8 +359,8 @@ export class WorkbenchHost {
         });
     });
   }
-  catalog() {
-    this.refresh();
+  catalog(refresh = true) {
+    if (refresh) this.refresh();
     return {
       basePath: DEFAULT_BASE_PATH,
       workspaceRoot: this.options.workspaceRoot,
@@ -537,7 +537,8 @@ export class WorkbenchHost {
       artifactBase: cfg.basePath,
       controlBase: cfg.basePath,
       workbench: {
-        ...this.catalog(),
+        // The task model is already read; do not reconcile process exits mid-response.
+        ...this.catalog(false),
         selectedRun: history[0].id,
         executionRunId: run.id,
         workspace: this.workspace(run.workspaceId),
@@ -601,6 +602,7 @@ export class WorkbenchHost {
         return;
       }
       if (scoped[2] === '/api/state' && req.method === 'GET') {
+        this.refresh();
         const latest = this.latestRound(this.taskRoot(run).id, run.workspaceId);
         req.url = `${DEFAULT_BASE_PATH}/r/${latest.id}/api/state?s=${encodeURIComponent(latest.sessionId)}`;
         this.view(latest).emit('request', req, res);
@@ -734,6 +736,7 @@ export class WorkbenchHost {
         ? this.registry.runs.find((r) => r.sessionId === session)
         : [...this.registry.runs].sort((a, b) => b.createdTs - a.createdTs)[0];
     if (route === DEFAULT_BASE_PATH + '/api/state') {
+      this.refresh();
       if ((selected || session) && !run) {
         this.json(res, 404, { ok: false, error: 'Task not found.' });
         return;

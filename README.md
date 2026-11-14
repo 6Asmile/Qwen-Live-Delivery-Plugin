@@ -20,7 +20,6 @@ The local browser workbench brings these capabilities together: review progress,
 
 ![Live Delivery demo](docs/assets/orbit-live-delivery-en.gif)
 
-
 ## How it works
 
 [![Start with ld:go: set a task, let the Agent work, then review and steer. Add instructions anytime; Hooks bring feedback back to the Agent for the next version. Keep every delivered result.](docs/assets/lifecycle-en.png)](docs/assets/lifecycle-en.png)

@@ -460,5 +460,11 @@ try {
   model.closeAllConnections();
   model.close();
   // Keep failed diagnostics private; successful runs have no surviving children.
-  if (!modelError && requests === steps.length) fs.rmSync(temp, { recursive: true, force: true });
+  if (!modelError && requests === steps.length)
+    await fs.promises.rm(temp, {
+      recursive: true,
+      force: true,
+      maxRetries: 10,
+      retryDelay: 100,
+    });
 }

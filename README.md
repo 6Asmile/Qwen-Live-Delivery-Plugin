@@ -18,9 +18,8 @@ The local browser workbench brings these capabilities together: review progress,
 
 ## Demo
 
-[![Watch the ORBIT demo: versioned deliveries, live previews, and feedback during execution.](docs/assets/demo-poster-en.jpg)](docs/assets/demo-en.mp4)
+![Live Delivery demo](docs/assets/orbit-live-delivery-en.gif)
 
-[Watch the demo · 3 min](docs/assets/demo-en.mp4)
 
 ## How it works
 

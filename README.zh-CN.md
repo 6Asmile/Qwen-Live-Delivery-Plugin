@@ -18,9 +18,7 @@
 
 ## 演示
 
-[![观看 ORBIT 演示：逐版交付、实时预览与执行中补充要求。](docs/assets/demo-poster.jpg)](docs/assets/demo.mp4)
-
-[观看演示 · 3 分钟](docs/assets/demo.mp4)
+![持续交付演示](docs/assets/orbit-live-delivery-zh.gif)
 
 ## 工作原理
 

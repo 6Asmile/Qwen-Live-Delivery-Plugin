@@ -18,6 +18,8 @@ The local browser workbench brings these capabilities together: review progress,
 
 ## Demo
 
+This demo follows an AI agent as it builds ORBIT, a personal trading research website, from the ground up through continuous delivery. The agent ships a working first version, then iteratively develops the market dashboard, strategy backtesting, and paper trading tools. Users can try each release and request changes along the way, with the agent incorporating their feedback into future updates.
+
 ![Live Delivery demo](docs/assets/orbit-live-delivery-en.gif)
 
 ## How it works
@@ -98,6 +100,10 @@ Plugin **0.1.0**, tested with Codex **0.166.0 / 0.167.1**.
 
 - [Contributing](CONTRIBUTING.md) · [Development and tests](docs/development.md)
 - [Security](SECURITY.md)
+
+## Planned ToDos
+
+- [ ] **Expand support for agent harnesses**: Build on the existing MCP delivery tools and version snapshots to support each harness’s installation workflow, lifecycle hooks, session management, and APIs for interrupting and resuming tasks. Add end-to-end compatibility tests covering release publishing, new requirements added during execution, task continuation across sessions, and task cancellation.
 
 ## Citation
 
